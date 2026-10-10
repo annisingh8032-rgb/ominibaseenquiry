@@ -468,6 +468,13 @@ tr.date-group-row:first-child td{padding-top:0 !important;}
 }
 
 /* ── OFFLINE NOTICE ── */
+#syncPill{
+  position:fixed;left:50%;transform:translateX(-50%);bottom:76px;z-index:9998;
+  background:#0e3128;color:#fff;font-size:12px;font-weight:600;padding:7px 14px;border-radius:20px;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);display:none;cursor:pointer;white-space:nowrap
+}
+#syncPill.show{display:block}
+#syncPill.pending{background:#b45309}
 #offlineBar{
   background:rgba(220,38,38,0.15);border-bottom:1px solid rgba(220,38,38,0.3);
   text-align:center;padding:6px;font-size:12px;color:#b91c1c;display:none;
@@ -531,12 +538,112 @@ tbody td{padding:12px 14px;vertical-align:middle;}
 }
 .wa-dd button:hover{background:var(--input-bg);}
 .wa-dd hr{border-color:var(--border);margin:3px 0;}
+
+/* ── ICONS ── */
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-0.15em;flex-shrink:0;}
+.filter-chip .ic{margin-right:3px;}
+.c-green{color:var(--green);}.c-orange{color:var(--orange);}.c-red{color:var(--red);}
+
+/* ── HEADER STATS (alag alag rang) ── */
+.stat-mini{cursor:pointer;font-weight:700;font-size:12px;gap:5px;}
+.stat-mini .ic{width:14px;height:14px;}
+.stat-blue{color:#2563eb;background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.28);}
+.stat-green{color:var(--green);background:rgba(22,163,74,.08);border-color:rgba(22,163,74,.28);}
+.stat-orange{color:var(--orange);background:rgba(234,88,12,.08);border-color:rgba(234,88,12,.28);}
+
+@media(max-width:420px){.tab-btn{font-size:12px;padding:13px 4px;gap:4px;}.tab-btn svg{width:15px;height:15px;}}
+
+/* ── MEETING SUB-TABS ── */
+.seg{display:flex;background:var(--input-bg);border:1px solid var(--border);border-radius:12px;padding:4px;gap:4px;margin-bottom:14px;}
+.seg button{flex:1;border:none;background:none;padding:10px 6px;border-radius:9px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;}
+.seg button.active{background:var(--accent);color:#fff;}
+
+/* ── SETTINGS ── */
+.set-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:14px;}
+.set-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:12px;}
+.set-title .ic{color:var(--accent2);width:17px;height:17px;}
+.set-card label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin:10px 0 5px;}
+.set-card textarea,.set-card input[type=text],.set-card input[type=password]{width:100%;background:var(--input-bg);border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);outline:none;}
+.set-card textarea{min-height:120px;resize:vertical;line-height:1.5;}
+.set-card textarea:focus,.set-card input:focus{border-color:var(--accent);}
+.set-hint{font-size:11px;color:var(--muted);line-height:1.5;margin-top:6px;}
+.set-btns{display:flex;gap:8px;margin-top:14px;}
+.btn-main,.btn-ghost,.btn-danger{flex:1;border-radius:10px;padding:11px 12px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;}
+.btn-main{background:var(--accent);color:#fff;border:none;}
+.btn-ghost{background:var(--card);color:var(--accent2);border:1px solid var(--border2);}
+.btn-danger{background:rgba(220,38,38,.08);color:var(--red);border:1px solid rgba(220,38,38,.3);}
+.pw-row{display:flex;gap:8px;align-items:center;}
+.pw-row button{flex-shrink:0;width:42px;height:42px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--accent2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:17px;}
+.sy-row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.sy-row:last-of-type{border-bottom:none;}
+.sy-row span:first-child{color:var(--muted);}
+.sy-row span:last-child{font-weight:600;text-align:right;}
+.guide-row{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:13px;line-height:1.4;}
+.guide-chip{display:inline-flex;align-items:center;gap:5px;border:1px solid;border-radius:12px;padding:3px 9px;font-weight:700;font-size:12px;flex-shrink:0;}
+
+/* ── LOGIN ── */
+#loginScreen{position:fixed;inset:0;z-index:10000;background:linear-gradient(160deg,#0e3128,#1f9d6e);display:none;align-items:center;justify-content:center;padding:20px;}
+html.locked #loginScreen{display:flex;}
+.login-card{background:#fff;border-radius:20px;padding:26px 22px;width:100%;max-width:340px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.3);}
+.login-logo{width:64px;height:64px;border-radius:50%;margin-bottom:10px;}
+.login-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--accent);}
+.login-sub{font-size:12px;color:var(--muted);margin:4px 0 16px;}
+.login-card input{width:100%;background:var(--input-bg);border:1px solid var(--border2);border-radius:12px;padding:13px 14px;font-size:15px;margin-bottom:10px;outline:none;font-family:'DM Sans',sans-serif;}
+.login-card input:focus{border-color:var(--accent);}
+.login-err{color:var(--red);font-size:12px;min-height:16px;margin-bottom:8px;}
+.login-card .btn-submit{width:100%;justify-content:center;}
 </style>
 </head>
 <body>
+<script>try{if(!(localStorage.getItem('ominibase_pw_v1')&&localStorage.getItem('ominibase_auth_v1')==='1'))document.documentElement.classList.add('locked')}catch(e){}</script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-bolt" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+<symbol id="i-check-circle" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+<symbol id="i-x-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+<symbol id="i-wifi" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><line x1="9" y1="6" x2="9.01" y2="6"/><line x1="15" y1="6" x2="15.01" y2="6"/><line x1="9" y1="10" x2="9.01" y2="10"/><line x1="15" y1="10" x2="15.01" y2="10"/><line x1="9" y1="14" x2="9.01" y2="14"/><line x1="15" y1="14" x2="15.01" y2="14"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+<symbol id="i-inbox" viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></symbol>
+<symbol id="i-log-out" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></symbol>
+<symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+<symbol id="i-cloud" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>
+<symbol id="i-key" viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+</defs></svg>
+
+<!-- LOGIN -->
+<div id="loginScreen">
+  <div class="login-card">
+    <img src="icon-192x192.png" class="login-logo" alt="Ominibase">
+    <div class="login-title" id="loginTitle">Login</div>
+    <div class="login-sub" id="loginSub"></div>
+    <input type="password" id="loginPw" placeholder="Password" autocomplete="current-password">
+    <input type="password" id="loginPw2" placeholder="Password dobara daalein" style="display:none" autocomplete="new-password">
+    <div class="login-err" id="loginErr"></div>
+    <button class="btn-submit" id="loginBtn" onclick="doLogin()">Login</button>
+  </div>
+</div>
 
 <!-- Offline bar -->
-<div id="offlineBar">⚡ Offline mode — Data local mein saved hai</div>
+<div id="offlineBar"><svg class="ic"><use href="#i-bolt"/></svg> Offline mode — Data local mein saved hai, net aate hi sync hoga</div>
 
 <!-- HEADER -->
 <header>
@@ -548,16 +655,16 @@ tbody td{padding:12px 14px;vertical-align:middle;}
     </div>
   </div>
   <div class="header-right">
-    <div class="stat-mini" title="Aaj ke naye enquiry"><span class="dot dot-all"></span><span id="stat-total">0</span></div>
-    <div class="stat-mini" title="Aaj kitni jagah visit karna hai"><span class="dot dot-green"></span><span id="stat-online">0</span></div>
-    <div class="stat-mini" title="Meeting section ka total data"><span class="dot dot-orange"></span><span id="stat-offline">0</span></div>
+    <div class="stat-mini stat-blue" onclick="statInfo('enquiry')" title="Aaj ke naye enquiry"><svg class="ic"><use href="#i-inbox"/></svg><span id="stat-total">0</span></div>
+    <div class="stat-mini stat-green" onclick="statInfo('visit')" title="Aaj kitni jagah visit karna hai"><svg class="ic"><use href="#i-pin"/></svg><span id="stat-online">0</span></div>
+    <div class="stat-mini stat-orange" onclick="statInfo('total')" title="Meeting section ka total data"><svg class="ic"><use href="#i-layers"/></svg><span id="stat-offline">0</span></div>
   </div>
 </header>
 
 <!-- PWA Install Banner -->
 <div id="installBanner">
   <div class="install-text">
-    <strong>📲 App Install Karein</strong>
+    <strong><svg class="ic"><use href="#i-download"/></svg> App Install Karein</strong>
     Home screen pe add karo — offline bhi chalega!
   </div>
   <button class="btn-install" id="installBtn">Install</button>
@@ -566,8 +673,8 @@ tbody td{padding:12px 14px;vertical-align:middle;}
 
 <!-- Config Banner -->
 <div class="config-banner" id="configBanner" style="display:none">
-  <span>⚠️</span>
-  <div><strong>Google Sheets Setup Baaki Hai</strong>index.html mein SCRIPT_URL replace karein. Niche ⚙️ CONFIG section dekhein.</div>
+  <svg class="ic"><use href="#i-alert"/></svg>
+  <div><strong>Google Sheets Setup Baaki Hai</strong>index.html mein SCRIPT_URL replace karein. Niche CONFIG section dekhein.</div>
 </div>
 
 <!-- TABS -->
@@ -583,6 +690,10 @@ tbody td{padding:12px 14px;vertical-align:middle;}
   <button class="tab-btn" onclick="switchTab('followup')" id="tab-followup">
     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
     Follow Up
+  </button>
+  <button class="tab-btn" onclick="switchTab('settings')" id="tab-settings">
+    <svg class="ic"><use href="#i-settings"/></svg>
+    Settings
   </button>
 </div>
 
@@ -644,9 +755,9 @@ tbody td{padding:12px 14px;vertical-align:middle;}
       <div class="form-group">
         <label>Interest Status</label>
         <select id="f_status">
-          <option value="Pending">⏳ Pending</option>
-          <option value="Interested">✅ Interested</option>
-          <option value="Not Interested">❌ Not Interested</option>
+          <option value="Pending">Pending</option>
+          <option value="Interested">Interested</option>
+          <option value="Not Interested">Not Interested</option>
         </select>
       </div>
       <div class="form-group form-toggle-row">
@@ -676,13 +787,18 @@ tbody td{padding:12px 14px;vertical-align:middle;}
 <div class="tab-panel" id="panel-leads">
   <div class="section-header-row">
     <div class="section-title">Meeting</div>
-    <button class="refresh-btn" onclick="loadData()">↻ Refresh</button>
+    <button class="refresh-btn" onclick="loadData(true)"><svg class="ic"><use href="#i-refresh"/></svg> Refresh</button>
   </div>
 
+  <div class="seg">
+    <button id="seg-today" class="active" onclick="setMeetView('today')"><svg class="ic"><use href="#i-sun"/></svg> Today Meeting</button>
+    <button id="seg-all" onclick="setMeetView('all')"><svg class="ic"><use href="#i-calendar"/></svg> All Meeting</button>
+  </div>
+  <div id="meetToday">
   <!-- TODAY'S MEETINGS -->
   <div class="today-card">
     <div class="today-head">
-      <div class="today-title">📅 Aaj Ki Meetings <span class="today-count" id="todayCount">0</span></div>
+      <div class="today-title"><svg class="ic"><use href="#i-calendar"/></svg> Aaj Ki Meetings <span class="today-count" id="todayCount">0</span></div>
       <button class="locate-btn" onclick="locateAndSortToday()" id="locateBtn">
         <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
         Nearest Dikhayein
@@ -693,27 +809,22 @@ tbody td{padding:12px 14px;vertical-align:middle;}
     </div>
   </div>
 
-  <!-- UPCOMING MEETINGS (date-wise header) -->
-  <div class="upcoming-card">
-    <div class="upcoming-title">📆 Aane Wali Meetings</div>
-    <div class="upcoming-list" id="upcomingList">
-      <div class="upcoming-empty">Loading...</div>
-    </div>
+  <div class="leads-list" id="todayCards"></div>
   </div>
-
+  <div id="meetAll" style="display:none">
   <!-- Search -->
   <div class="search-box">
     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/></svg>
     <input id="searchMeeting" type="text" placeholder="Name, Studio ya Phone se search karein..." oninput="applyFilters()"/>
-    <button class="search-clear" id="searchMeetingClear" onclick="document.getElementById('searchMeeting').value='';applyFilters();">✕</button>
+    <button class="search-clear" id="searchMeetingClear" onclick="document.getElementById('searchMeeting').value='';applyFilters();"><svg class="ic"><use href="#i-x"/></svg></button>
   </div>
 
   <!-- Filter chips -->
   <div class="filter-bar">
     <span style="font-size:12px;color:var(--muted);align-self:center;flex-shrink:0;">Mode:</span>
     <button class="filter-chip active" onclick="setModeFilter(this,'')" data-mode="">All</button>
-    <button class="filter-chip" onclick="setModeFilter(this,'Online')" data-mode="Online">🟢 Online</button>
-    <button class="filter-chip" onclick="setModeFilter(this,'Offline')" data-mode="Offline">🟠 Offline</button>
+    <button class="filter-chip" onclick="setModeFilter(this,'Online')" data-mode="Online"><svg class="ic" style="color:var(--green)"><use href="#i-wifi"/></svg> Online</button>
+    <button class="filter-chip" onclick="setModeFilter(this,'Offline')" data-mode="Offline"><svg class="ic" style="color:var(--orange)"><use href="#i-building"/></svg> Offline</button>
     <span style="font-size:12px;color:var(--muted);align-self:center;flex-shrink:0;margin-left:4px;">Cat:</span>
     <div class="filter-select-wrap">
       <select id="filterCat" onchange="applyFilters()">
@@ -728,9 +839,9 @@ tbody td{padding:12px 14px;vertical-align:middle;}
     </div>
     <span style="font-size:12px;color:var(--muted);align-self:center;flex-shrink:0;margin-left:4px;">Status:</span>
     <button class="filter-chip active" onclick="setStatusFilter(this,'')" data-status="">All</button>
-    <button class="filter-chip" onclick="setStatusFilter(this,'Interested')" data-status="Interested">✅ Interested</button>
-    <button class="filter-chip" onclick="setStatusFilter(this,'Not Interested')" data-status="Not Interested">❌ Not Interested</button>
-    <button class="filter-chip" onclick="setStatusFilter(this,'Pending')" data-status="Pending">⏳ Pending</button>
+    <button class="filter-chip" onclick="setStatusFilter(this,'Interested')" data-status="Interested"><svg class="ic" style="color:var(--green)"><use href="#i-check-circle"/></svg> Interested</button>
+    <button class="filter-chip" onclick="setStatusFilter(this,'Not Interested')" data-status="Not Interested"><svg class="ic" style="color:var(--red)"><use href="#i-x-circle"/></svg> Not Interested</button>
+    <button class="filter-chip" onclick="setStatusFilter(this,'Pending')" data-status="Pending"><svg class="ic" style="color:var(--orange)"><use href="#i-clock"/></svg> Pending</button>
   </div>
 
   <!-- Mobile Cards -->
@@ -748,28 +859,29 @@ tbody td{padding:12px 14px;vertical-align:middle;}
       <tbody id="tableBody"></tbody>
     </table>
   </div>
+  </div>
 </div>
 
 <!-- TAB: FOLLOW UP -->
 <div class="tab-panel" id="panel-followup">
   <div class="section-header-row">
     <div class="section-title">Follow Up <span class="today-count" id="followupCount">0</span></div>
-    <button class="refresh-btn" onclick="loadData()">↻ Refresh</button>
+    <button class="refresh-btn" onclick="loadData(true)"><svg class="ic"><use href="#i-refresh"/></svg> Refresh</button>
   </div>
 
   <!-- Search -->
   <div class="search-box">
     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/></svg>
     <input id="searchFollowup" type="text" placeholder="Name, Studio ya Phone se search karein..." oninput="applyFollowupFilters()"/>
-    <button class="search-clear" id="searchFollowupClear" onclick="document.getElementById('searchFollowup').value='';applyFollowupFilters();">✕</button>
+    <button class="search-clear" id="searchFollowupClear" onclick="document.getElementById('searchFollowup').value='';applyFollowupFilters();"><svg class="ic"><use href="#i-x"/></svg></button>
   </div>
 
   <!-- Filter chips -->
   <div class="filter-bar" data-scope="followup">
     <span style="font-size:12px;color:var(--muted);align-self:center;flex-shrink:0;">Mode:</span>
     <button class="filter-chip active" onclick="setModeFilterFU(this,'')" data-mode="">All</button>
-    <button class="filter-chip" onclick="setModeFilterFU(this,'Online')" data-mode="Online">🟢 Online</button>
-    <button class="filter-chip" onclick="setModeFilterFU(this,'Offline')" data-mode="Offline">🟠 Offline</button>
+    <button class="filter-chip" onclick="setModeFilterFU(this,'Online')" data-mode="Online"><svg class="ic" style="color:var(--green)"><use href="#i-wifi"/></svg> Online</button>
+    <button class="filter-chip" onclick="setModeFilterFU(this,'Offline')" data-mode="Offline"><svg class="ic" style="color:var(--orange)"><use href="#i-building"/></svg> Offline</button>
     <span style="font-size:12px;color:var(--muted);align-self:center;flex-shrink:0;margin-left:4px;">Cat:</span>
     <div class="filter-select-wrap">
       <select id="filterCatFU" onchange="applyFollowupFilters()">
@@ -784,9 +896,9 @@ tbody td{padding:12px 14px;vertical-align:middle;}
     </div>
     <span style="font-size:12px;color:var(--muted);align-self:center;flex-shrink:0;margin-left:4px;">Status:</span>
     <button class="filter-chip active" onclick="setStatusFilterFU(this,'')" data-status="">All</button>
-    <button class="filter-chip" onclick="setStatusFilterFU(this,'Interested')" data-status="Interested">✅ Interested</button>
-    <button class="filter-chip" onclick="setStatusFilterFU(this,'Not Interested')" data-status="Not Interested">❌ Not Interested</button>
-    <button class="filter-chip" onclick="setStatusFilterFU(this,'Pending')" data-status="Pending">⏳ Pending</button>
+    <button class="filter-chip" onclick="setStatusFilterFU(this,'Interested')" data-status="Interested"><svg class="ic" style="color:var(--green)"><use href="#i-check-circle"/></svg> Interested</button>
+    <button class="filter-chip" onclick="setStatusFilterFU(this,'Not Interested')" data-status="Not Interested"><svg class="ic" style="color:var(--red)"><use href="#i-x-circle"/></svg> Not Interested</button>
+    <button class="filter-chip" onclick="setStatusFilterFU(this,'Pending')" data-status="Pending"><svg class="ic" style="color:var(--orange)"><use href="#i-clock"/></svg> Pending</button>
   </div>
 
   <!-- Mobile Cards -->
@@ -803,6 +915,64 @@ tbody td{padding:12px 14px;vertical-align:middle;}
       </thead>
       <tbody id="followupTableBody"></tbody>
     </table>
+  </div>
+</div>
+
+<!-- TAB: SETTINGS -->
+<div class="tab-panel" id="panel-settings">
+  <div class="section-header-row"><div class="section-title">Settings</div></div>
+
+  <div class="set-card">
+    <div class="set-title"><svg class="ic"><use href="#i-message"/></svg> WhatsApp Messages</div>
+    <label>First Message — Online query</label>
+    <textarea id="set_firstOnline"></textarea>
+    <label>First Message — Offline query</label>
+    <textarea id="set_firstOffline"></textarea>
+    <label>Reminder Message</label>
+    <textarea id="set_reminder" style="min-height:90px"></textarea>
+    <label>Service line (category ke hisaab se message mein {service} ki jagah aati hai)</label>
+    <div id="set_services"></div>
+    <div class="set-hint">Variables: {greet} = Hi Rahul, {greet_ji} = Hi Rahul ji, {name}, {studio}, {service}, {category}, {phone}. *text* bold hota hai WhatsApp mein.</div>
+    <div class="set-btns">
+      <button class="btn-ghost" onclick="resetTemplates()">Default Karein</button>
+      <button class="btn-main" onclick="saveTemplates()"><svg class="ic"><use href="#i-check"/></svg> Save Karein</button>
+    </div>
+  </div>
+
+  <div class="set-card">
+    <div class="set-title"><svg class="ic"><use href="#i-key"/></svg> Password</div>
+    <label>Abhi ka password</label>
+    <div class="pw-row">
+      <input type="text" id="set_curPw" readonly>
+      <button onclick="togglePwView()" id="pwEyeBtn" title="Show / Hide"><svg class="ic"><use href="#i-eye-off"/></svg></button>
+    </div>
+    <label>Naya password</label>
+    <input type="password" id="set_newPw" placeholder="Kam se kam 4 character" autocomplete="new-password">
+    <div class="set-btns"><button class="btn-main" onclick="changePassword()">Password Badlein</button></div>
+    <div class="set-hint">Ye password sirf is device par save hota hai. Dusre phone par alag se set karna hoga.</div>
+  </div>
+
+  <div class="set-card">
+    <div class="set-title"><svg class="ic"><use href="#i-cloud"/></svg> Sync Details</div>
+    <div class="sy-row"><span>Internet</span><span id="sy_status">—</span></div>
+    <div class="sy-row"><span>Sheet par bhejna baaki</span><span id="sy_pending">0</span></div>
+    <div class="sy-row"><span>Aakhri baar data bheja</span><span id="sy_push">—</span></div>
+    <div class="sy-row"><span>Aakhri baar sheet se data aaya</span><span id="sy_pull">—</span></div>
+    <div class="sy-row"><span>Phone mein total leads</span><span id="sy_count">0</span></div>
+    <div class="sy-row"><span>Last error</span><span id="sy_err">—</span></div>
+    <div class="set-hint">Auto sync: har 3 sec mein pending data Google Sheet par jata hai, aur har 15 sec mein sheet se naya data aata hai.</div>
+    <div class="set-btns"><button class="btn-main" onclick="syncNow()"><svg class="ic"><use href="#i-refresh"/></svg> Abhi Sync Karein</button></div>
+  </div>
+
+  <div class="set-card">
+    <div class="set-title"><svg class="ic"><use href="#i-info"/></svg> Header ke 3 icon ka matlab</div>
+    <div class="guide-row"><span class="guide-chip stat-blue"><svg class="ic"><use href="#i-inbox"/></svg> 0</span><span><b>Aaj ke enquiry</b> — aaj kitne naye lead add hue</span></div>
+    <div class="guide-row"><span class="guide-chip stat-green"><svg class="ic"><use href="#i-pin"/></svg> 0</span><span><b>Aaj ke visit</b> — aaj kitni jagah (Offline meeting) jaana hai</span></div>
+    <div class="guide-row"><span class="guide-chip stat-orange"><svg class="ic"><use href="#i-layers"/></svg> 0</span><span><b>Meeting total</b> — Meeting section mein kul kitne lead hain</span></div>
+  </div>
+
+  <div class="set-card">
+    <button class="btn-danger" style="width:100%" onclick="logout()"><svg class="ic"><use href="#i-log-out"/></svg> Logout</button>
   </div>
 </div>
 
@@ -856,7 +1026,7 @@ tbody td{padding:12px 14px;vertical-align:middle;}
 <div class="modal-overlay" id="editModal">
   <div class="modal">
     <div class="modal-drag"></div>
-    <div class="modal-title">✏️ Query Edit Karein</div>
+    <div class="modal-title"><svg class="ic"><use href="#i-edit"/></svg> Query Edit Karein</div>
     <input type="hidden" id="edit_rowId">
     <div class="modal-form-stack">
       <div class="form-group"><label>Name (Optional)</label><input id="edit_name" type="text" autocomplete="off"/></div>
@@ -888,9 +1058,9 @@ tbody td{padding:12px 14px;vertical-align:middle;}
       <div class="form-group">
         <label>Interest Status</label>
         <select id="edit_status">
-          <option value="Pending">⏳ Pending</option>
-          <option value="Interested">✅ Interested</option>
-          <option value="Not Interested">❌ Not Interested</option>
+          <option value="Pending">Pending</option>
+          <option value="Interested">Interested</option>
+          <option value="Not Interested">Not Interested</option>
         </select>
       </div>
       <div class="form-group">
@@ -913,7 +1083,7 @@ tbody td{padding:12px 14px;vertical-align:middle;}
   <div class="modal">
     <div class="modal-drag"></div>
     <div class="delete-confirm-body">
-      <div class="del-icon">🗑️</div>
+      <div class="del-icon c-red"><svg class="ic"><use href="#i-trash"/></svg></div>
       <div class="modal-title" style="text-align:center;">Delete Karein?</div>
       <p>Is query ko permanently delete kiya jayega.<br><span style="color:var(--red);font-size:12px;">Google Sheet se bhi remove hoga.</span></p>
     </div>
@@ -927,6 +1097,7 @@ tbody td{padding:12px 14px;vertical-align:middle;}
 
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
+<div id="syncPill" onclick="syncOutbox(true)" title="Tap karke abhi sync karein"></div>
 
 <script>
 // ============================================================
@@ -936,6 +1107,8 @@ const CONFIG = {
   SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbw4kbrKzt_ZYTouoa1PYcLm-gbMfIu77pSf4nC9ANUPi17asySmrTQTnXirSvIBsp9y_w/exec',
 };
 // ============================================================
+
+const ic = (n, cls) => `<svg class="ic${cls ? ' ' + cls : ''}"><use href="#i-${n}"/></svg>`;
 
 let allData = [];
 let filteredData = [];
@@ -989,51 +1162,138 @@ window.addEventListener('online', updateOnlineStatus);
 window.addEventListener('offline', updateOnlineStatus);
 updateOnlineStatus();
 
+// ── Back button: jo section khola, back dabane par usi order mein wapas ──
+let currentTab = 'add';
+let overlayOpen = null;
+try { history.replaceState({ tab: 'add' }, ''); } catch {}
+function applyOverlay(id, open) {
+  if (id === 'waSheet') {
+    document.getElementById('sheetOverlay').classList.toggle('open', open);
+    document.getElementById('waSheet').classList.toggle('open', open);
+    if (!open) activeSheetRow = null;
+  } else {
+    document.getElementById(id).classList.toggle('open', open);
+  }
+}
+function openOverlay(id) {
+  if (overlayOpen && overlayOpen !== id) applyOverlay(overlayOpen, false);
+  applyOverlay(id, true);
+  overlayOpen = id;
+  try { history.pushState({ ov: id }, ''); } catch {}
+}
+function closeOverlay(id, viaPop) {
+  applyOverlay(id, false);
+  if (overlayOpen === id) {
+    overlayOpen = null;
+    if (!viaPop) { try { history.back(); } catch {} }
+  }
+}
+window.addEventListener('popstate', e => {
+  if (overlayOpen) { closeOverlay(overlayOpen, true); return; }
+  const tab = e.state && e.state.tab;
+  if (tab && tab !== currentTab) switchTab(tab, true);
+});
+
 // ── Tabs ──
-function switchTab(tab) {
+function switchTab(tab, fromPop) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('panel-' + tab).classList.add('active');
   document.getElementById('tab-' + tab).classList.add('active');
-  if (tab === 'leads' || tab === 'followup') loadData();
+  if (!fromPop && tab !== currentTab) { try { history.pushState({ tab }, ''); } catch {} }
+  currentTab = tab;
+  window.scrollTo(0, 0);
+  if (tab === 'settings') renderSettings();
+  else if (tab === 'leads' || tab === 'followup') loadData();
+}
+
+// ── Meeting: Today / All ──
+let meetView = 'today';
+function setMeetView(v) {
+  meetView = v;
+  document.getElementById('meetToday').style.display = v === 'today' ? '' : 'none';
+  document.getElementById('meetAll').style.display = v === 'all' ? '' : 'none';
+  document.getElementById('seg-today').classList.toggle('active', v === 'today');
+  document.getElementById('seg-all').classList.toggle('active', v === 'all');
+}
+
+// ── Header icon info ──
+function statInfo(k) {
+  const m = {
+    enquiry: 'Neela: aaj kitne naye enquiry add hue',
+    visit: 'Hara: aaj kitni jagah visit karna hai (Offline meetings)',
+    total: 'Narangi: Meeting section mein total kitne lead hain'
+  };
+  showToast(m[k], 'info');
 }
 
 // ── URL param tab switch ──
 const urlParams = new URLSearchParams(location.search);
-if (urlParams.get('view') === 'all') switchTab('leads');
 
-// ── Service Snippets ──
-function getServiceSnippet(cat) {
-  const m = {
-    'Custom Website':'🌐 *Custom Website:*\nAapke studio ke liye ek professional website jo online bookings, schedule aur payment accept kare. Clients 24/7 aapko dhundh sakenge!',
-    'Custom Form':'📋 *Custom Form:*\nEk smart online form jo aapke studio ke liye lead capture, registrations ya feedback collect kare. Puri automation ke saath!',
-    'CMS':'🖥️ *CMS (Control Management System):*\nApni website ka content khud manage karo — bina developer ke. Blog, schedule, offers — sab ek jagah.',
-    'Google Form':'📝 *Google Form Setup:*\nFree Google Forms ko professionally brand karna aur Google Sheets se connect karke data organize karna. Simple aur effective!',
-    'Attendance Management System':'✅ *Attendance Management System:*\nStudents ki attendance track karo, fee reminders bhejo aur reports generate karo — sab kuch automatic!',
-    'Full Package':'🚀 *Full Package:*\nWebsite + CMS + Attendance System + Google Form + Custom Forms — ek complete digital transformation aapke studio ke liye!'
-  };
-  return m[cat] || `📌 *${cat}*\nAapki selected service ke baare mein demo ke liye humse contact karein.`;
-}
-
-// ── MESSAGE LOGIC ──
-function buildFirstMessage(row) {
-  // Sirf service ka title line chahiye (emoji + naam), poora description nahi
-  const title = getServiceSnippet(row.category).split('\n')[0];
-  const greet = row.name ? `Hi ${row.name} 👋` : `Hi 👋`;
-  if (row.mode === 'Online') {
-    return `${greet}\nThank you Ominibase se connect karne ke liye! Aapke studio *${row.studio}* ke baare mein jaan kar khushi hui.\n💻 Service\n${title}\nKisi bhi doubt ya live demo ke liye is number par reply karein!\n🌐 ominibase.online | 📞 7323053397`;
-  } else {
-    return `${greet}\nAaj aapke studio *${row.studio}* par aapse milkar bohot accha laga!\n💻 Service\n${title}\nFree live demo ya details ke liye kabhi bhi WhatsApp/Call karein.\n🌐 ominibase.online | 📞 7323053397`;
+// ── WhatsApp Templates (Settings se edit hote hain, phone mein save) ──
+const TPL_KEY = 'ominibase_tpl_v1';
+const DEFAULT_TPL = {
+  firstOnline: "{greet}\nThank you Ominibase se connect karne ke liye! Aapke studio *{studio}* ke baare mein jaan kar khushi hui.\nService\n{service}\nKisi bhi doubt ya live demo ke liye is number par reply karein!\nominibase.online | Call: 7323053397",
+  firstOffline: "{greet}\nAaj aapke studio *{studio}* par aapse milkar bohot accha laga!\nService\n{service}\nFree live demo ya details ke liye kabhi bhi WhatsApp/Call karein.\nominibase.online | Call: 7323053397",
+  reminder: "{greet_ji}\nMain Ominibase se Dev. Studio *{studio}* ko digitalize karne ke liye!\n\naaj hi live demo schedule karein?",
+  services: {
+    'Custom Website': '*Custom Website:*',
+    'Custom Form': '*Custom Form:*',
+    'CMS': '*CMS (Control Management System):*',
+    'Google Form': '*Google Form Setup:*',
+    'Attendance Management System': '*Attendance Management System:*',
+    'Full Package': '*Full Package:*'
   }
+};
+function getTpl() {
+  let t = {};
+  try { t = JSON.parse(localStorage.getItem(TPL_KEY) || '{}') || {}; } catch {}
+  return {
+    firstOnline: t.firstOnline || DEFAULT_TPL.firstOnline,
+    firstOffline: t.firstOffline || DEFAULT_TPL.firstOffline,
+    reminder: t.reminder || DEFAULT_TPL.reminder,
+    services: { ...DEFAULT_TPL.services, ...(t.services || {}) }
+  };
 }
-
+function fillTpl(tpl, row) {
+  const name = (row.name || '').trim();
+  const service = getTpl().services[row.category] || ('*' + (row.category || '') + '*');
+  const vars = {
+    greet_ji: name ? 'Hi ' + name + ' ji' : 'Hi',
+    greet: name ? 'Hi ' + name : 'Hi',
+    name, studio: row.studio || '', service,
+    category: row.category || '', phone: row.phone || ''
+  };
+  return tpl.replace(/\{(greet_ji|greet|name|studio|service|category|phone)\}/g, (_, k) => vars[k]);
+}
+function buildFirstMessage(row) {
+  const t = getTpl();
+  return fillTpl(row.mode === 'Online' ? t.firstOnline : t.firstOffline, row);
+}
 function buildReminderMessage(row) {
-  const greet = row.name ? `Hi ${row.name} ji 👋` : `Hi 👋`;
-  return `${greet}\nMain Ominibase se Dev. Studio *${row.studio}* ko digitalize karne ke liye!\n\naaj hi live demo schedule karein?`;
+  return fillTpl(getTpl().reminder, row);
 }
 
+// ── WhatsApp seedha app mein kholo (Chrome browser nahi) ──
+function isMobileDevice() { return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent); }
 function openWA(phone, msg) {
-  window.open(`https://wa.me/91${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+  const text = encodeURIComponent(msg);
+  const web = `https://wa.me/91${phone}?text=${text}`;
+  if (!isMobileDevice()) { window.open(web, '_blank'); return; }
+  let left = false;
+  const mark = () => { left = true; };
+  document.addEventListener('visibilitychange', () => { if (document.hidden) left = true; }, { once: true });
+  window.addEventListener('pagehide', mark, { once: true });
+  window.addEventListener('blur', mark, { once: true });
+  // whatsapp:// scheme seedha WhatsApp app kholta hai
+  window.location.href = `whatsapp://send?phone=91${phone}&text=${text}`;
+  // 2 sec tak app na khule (app installed nahi) tabhi web link
+  setTimeout(() => {
+    if (!left && !document.hidden) {
+      showToast('WhatsApp app nahi mila, web se khol raha hoon', 'error');
+      window.open(web, '_blank');
+    }
+  }, 2000);
 }
 function openCall(phone) {
   window.location.href = `tel:+91${phone}`;
@@ -1059,7 +1319,7 @@ function openMapSmartById(id) {
 // ── Toast ──
 function showToast(msg, type = 'success') {
   const t = document.getElementById('toast');
-  t.innerHTML = (type === 'success' ? '✅ ' : '❌ ') + msg;
+  t.innerHTML = (type === 'success' ? ic('check-circle') : type === 'info' ? ic('info') : ic('x-circle')) + ' ' + msg;
   t.className = `toast ${type} show`;
   setTimeout(() => t.className = 'toast', 3000);
 }
@@ -1087,8 +1347,8 @@ function loadCache() {
   } catch {}
   return null;
 }
-function saveCache() {
-  if (!allData.length) return;
+function saveCache(force) {
+  if (!allData.length && !force) return;
   try { localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), data: allData })); } catch {}
 }
 
@@ -1119,44 +1379,199 @@ async function sheetRequest(params) {
   }
 }
 
+// ============================================================
+//  🔄 OFFLINE-FIRST SYNC (Outbox)
+//  Har change (add / edit / delete / stage) pehle phone mein save hota hai
+//  aur ek queue (outbox) mein jaata hai. Internet theek hote hi queue
+//  Google Sheet par background mein chali jaati hai.
+// ============================================================
+const OUTBOX_KEY = 'ominibase_outbox_v1';
+let syncing = false;
+let syncEpoch = 0;
+
+function getOutbox() {
+  try { const o = JSON.parse(localStorage.getItem(OUTBOX_KEY) || '[]'); return Array.isArray(o) ? o : []; } catch { return []; }
+}
+function setOutbox(list) {
+  try { localStorage.setItem(OUTBOX_KEY, JSON.stringify(list)); } catch {}
+  updateSyncPill();
+}
+function cleanForSheet(obj) {
+  const o = {};
+  Object.keys(obj).forEach(k => { if (k[0] !== '_') o[k] = obj[k]; });
+  return o;
+}
+function enqueue(action, id, data) {
+  const list = getOutbox();
+  if (action === 'delete') {
+    // Agar yeh lead abhi tak sheet par gayi hi nahi thi, toh add + delete dono hata do
+    const addIdx = list.findIndex(o => o.action === 'add' && o.id === id && !o.tried);
+    if (addIdx !== -1) {
+      setOutbox(list.filter(o => o.id !== id));
+      return;
+    }
+    // Is lead ke pending updates bekaar hain
+    setOutbox(list.filter(o => !(o.action === 'update' && o.id === id)).concat([{ opId: id + '-d-' + Date.now(), action, id, data: {}, fails: 0 }]));
+    return;
+  }
+  list.push({ opId: id + '-' + action[0] + '-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6), action, id, data: cleanForSheet(data || {}), fails: 0 });
+  setOutbox(list);
+}
+
+// Server se aaye data ke upar pending changes lagao (taaki local add/edit/delete gayab na ho)
+function overlayOutbox(rows) {
+  let out = rows.slice();
+  getOutbox().forEach(op => {
+    const i = out.findIndex(r => r.id === op.id);
+    if (op.action === 'add') { if (i === -1) out.unshift({ ...op.data, id: op.id }); }
+    else if (op.action === 'update') { if (i !== -1) out[i] = { ...out[i], ...op.data, id: op.id }; }
+    else if (op.action === 'delete') { if (i !== -1) out.splice(i, 1); }
+  });
+  return out;
+}
+
+function updateSyncPill() {
+  const pill = document.getElementById('syncPill'); if (!pill) return;
+  const n = getOutbox().length;
+  if (!n) { pill.className = ''; return; }
+  pill.innerHTML = syncing ? `${ic('refresh')} Sync ho raha hai… (${n})` : `${ic('clock')} ${n} change sync baaki — tap karein`;
+  pill.className = 'show pending';
+}
+
+async function syncOutbox(manual) {
+  if (syncing) return;
+  if (!isConfigured()) return;
+  if (!getOutbox().length) { updateSyncPill(); return; }
+  if (!navigator.onLine) { if (manual) showToast('Internet nahi hai, net aate hi sync ho jayega', 'error'); updateSyncPill(); return; }
+  syncing = true; updateSyncPill();
+  let doneCount = 0, dropped = 0;
+  try {
+    while (true) {
+      const list = getOutbox();
+      if (!list.length) break;
+      const op = list[0];
+      let ok = false, res = null;
+
+      // Add retry se duplicate na bane: pehle check karo ki kahin yeh row sheet par pahunch toh nahi gayi
+      if (op.action === 'add' && op.tried) {
+        const all = await sheetRequest({ action: 'getAll' });
+        if (!all || !Array.isArray(all.data)) break; // net abhi bhi slow, baad mein try
+        if (all.data.some(r => String(r.id) === String(op.id))) ok = true;
+      }
+      if (!ok) {
+        if (op.action === 'add') { list[0].tried = true; setOutbox(list); }
+        res = await sheetRequest({ action: op.action, id: op.id, ...op.data });
+        if (!res) break; // network / timeout — queue wahi rahegi, baad mein dobara
+        ok = !!res.success;
+      }
+      if (ok) {
+        setOutbox(getOutbox().filter(o => o.opId !== op.opId));
+        syncEpoch++; doneCount++; lastPushAt = Date.now();
+      } else {
+        // Server ne jawab diya par success nahi — 5 baar fail ho toh drop (queue atak na jaaye)
+        const cur = getOutbox();
+        const idx = cur.findIndex(o => o.opId === op.opId);
+        if (idx !== -1) {
+          cur[idx].fails = (cur[idx].fails || 0) + 1;
+          if (cur[idx].fails >= 5) { cur.splice(idx, 1); dropped++; syncEpoch++; }
+          else { const [x] = cur.splice(idx, 1); cur.push(x); } // peeche bhej do, aage wale chalne do
+          setOutbox(cur);
+        }
+        if (cur.length && cur.every(o => (o.fails || 0) > 0) && !dropped) break;
+      }
+    }
+  } finally {
+    syncing = false; updateSyncPill();
+    lastSyncErr = getOutbox().length ? (lastLoadError || lastSyncErr) : '';
+  }
+  if (dropped) showToast(dropped + ' change sheet accept nahi kar payi, skip kiya', 'error');
+  else if (doneCount && !getOutbox().length) showToast('Sab data Google Sheet par sync ho gaya');
+}
+// Slow net par bhi chalta rahe: har 20 sec mein pending queue try karo
+let lastPushAt = 0, lastSyncErr = '', lastDataSig = '';
+const PUSH_EVERY_MS = 3000;   // pending data har 3 sec mein sheet par
+const PULL_EVERY_MS = 15000;  // sheet se naya data har 15 sec mein (Apps Script quota bachane ke liye)
+function autoTick() {
+  if (getOutbox().length) syncOutbox();
+  else if (document.visibilityState === 'visible' && navigator.onLine && !isLoading && !syncing && Date.now() - lastLoadAt >= PULL_EVERY_MS) loadData(false, true);
+  updateSyncPanel();
+}
+setInterval(autoTick, PUSH_EVERY_MS);
+setInterval(updateSyncPanel, 1000);
+function syncNow() { if (!navigator.onLine) { showToast('Internet nahi hai', 'error'); return; } syncOutbox(true).then(() => loadData(true)); }
+function fmtAgo(t) {
+  if (!t) return '—';
+  const sec = Math.round((Date.now() - t) / 1000);
+  if (sec < 5) return 'Abhi';
+  if (sec < 60) return sec + ' sec pehle';
+  const m = Math.round(sec / 60);
+  if (m < 60) return m + ' min pehle';
+  return new Date(t).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+}
+function updateSyncPanel() {
+  if (typeof currentTab === 'undefined' || currentTab !== 'settings') return;
+  const set = (id, v, html) => { const e = document.getElementById(id); if (e) { if (html) e.innerHTML = v; else e.textContent = v; } };
+  const pend = getOutbox().length;
+  set('sy_status', navigator.onLine ? `<span class="c-green">${ic('wifi')} Online</span>` : `<span class="c-red">${ic('x-circle')} Offline</span>`, true);
+  set('sy_pending', pend ? pend + (syncing ? ' (bhej raha hai)' : ' (net aate hi jayenge)') : '0 — sab sync hai');
+  set('sy_push', fmtAgo(lastPushAt));
+  set('sy_pull', fmtAgo(lastLoadAt));
+  set('sy_count', String(allData.length));
+  set('sy_err', lastSyncErr || '—');
+}
+window.addEventListener('online', () => syncOutbox());
+
 function refreshUI() {
   applyFilters(); applyFollowupFilters(); updateStats(); renderTodayMeetings(); renderUpcoming();
 }
 
 function showLoadFailed() {
-  const msg = `<div class="today-empty">⚠️ Data load nahi hua${lastLoadError ? ' — ' + esc(lastLoadError) : ''}.<br><button class="refresh-btn" style="margin-top:10px" onclick="loadData(true)">↻ Dobara Try Karein</button></div>`;
+  const msg = `<div class="today-empty">${ic('alert')} Data load nahi hua${lastLoadError ? ' — ' + esc(lastLoadError) : ''}.<br><button class="refresh-btn" style="margin-top:10px" onclick="loadData(true)">${ic("refresh")} Dobara Try Karein</button></div>`;
   document.getElementById('todayList').innerHTML = msg;
   const up = document.getElementById('upcomingList');
   if (up) up.innerHTML = '';
 }
 
 // ── Load ──
-async function loadData(force) {
+async function loadData(force, silent) {
   if (!isConfigured()) { refreshUI(); return; }
   if (isLoading) return;
   isLoading = true;
-  const result = await sheetRequest({ action: 'getAll' });
-  isLoading = false;
+  try {
+    // Pehle pending local changes sheet par bhejo, phir fresh data lao
+    if (getOutbox().length) await syncOutbox();
+    const epoch = syncEpoch;
+    const result = navigator.onLine ? await sheetRequest({ action: 'getAll' }) : null;
+    if (!navigator.onLine) lastLoadError = 'Internet nahi hai';
 
-  if (result && Array.isArray(result.data)) {
-    allData = result.data;
-    lastLoadAt = Date.now();
-    saveCache();
-    refreshUI();
-    return;
-  }
+    if (result && Array.isArray(result.data)) {
+      if (epoch !== syncEpoch) { setTimeout(() => loadData(false, true), 500); return; }
+      const merged = overlayOutbox(result.data); // pending local changes upar rakho
+      const sig = JSON.stringify(merged);
+      lastLoadAt = Date.now();
+      lastSyncErr = '';
+      if (silent && sig === lastDataSig) return; // kuch badla nahi — UI dobara draw nahi karna
+      lastDataSig = sig;
+      allData = merged;
+      saveCache(true);
+      refreshUI();
+      return;
+    }
 
-  // Fail: pehle se dikha hua / saved data rakho, warna error + Retry dikhao
-  if (!allData.length) {
-    const cached = loadCache();
-    if (cached) allData = cached;
-  }
-  if (allData.length) {
-    refreshUI();
-    showToast('Live data nahi mila, saved data dikh raha hai' + (lastLoadError ? ' (' + lastLoadError + ')' : ''), 'error');
-  } else {
-    updateStats(); applyFilters(); applyFollowupFilters();
-    showLoadFailed();
+    lastSyncErr = lastLoadError || '';
+    if (!allData.length) {
+      const cached = loadCache();
+      if (cached) allData = cached;
+    }
+    if (allData.length) {
+      refreshUI();
+      if (navigator.onLine && !silent) showToast('Live data nahi mila, saved data dikh raha hai' + (lastLoadError ? ' (' + lastLoadError + ')' : ''), 'error');
+    } else {
+      updateStats(); applyFilters(); applyFollowupFilters();
+      showLoadFailed();
+    }
+  } finally {
+    isLoading = false;
   }
 }
 
@@ -1187,12 +1602,11 @@ async function submitQuery() {
     stage: 'meeting' // naya lead hamesha Meeting section mein aata hai
   };
 
-  if (isConfigured()) {
-    const res = await sheetRequest({ action: 'add', ...row });
-    if (!res || !res.success) showToast('Sheet mein save nahi hua. Local mein add kiya.', 'error');
-  }
-
+  // Pehle phone mein save, phir background mein sheet par
   allData.unshift(row);
+  saveCache(true);
+  enqueue('add', row.id, row);
+  syncOutbox();
   applyFilters(); applyFollowupFilters(); updateStats(); renderTodayMeetings(); renderUpcoming();
 
   ['f_name','f_studio','f_phone','f_address','f_studioService','f_meetingDate','f_meetingTime','f_meetingTimeTo'].forEach(id => document.getElementById(id).value = '');
@@ -1203,10 +1617,10 @@ async function submitQuery() {
   btn.disabled = false;
   btn.innerHTML = '<svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg> Query Add Karein';
 
-  const modeLabel = mode === 'Online' ? '🟢 Online' : '🟠 Offline';
+  const modeLabel = mode;
   showToast(`${studio} (${modeLabel}) add! WhatsApp khul raha hai...`);
 
-  setTimeout(() => openWA(phone, buildFirstMessage(row)), 800);
+  setTimeout(() => openWA(phone, buildFirstMessage(row)), 350);
 }
 
 // ── Filters ──
@@ -1276,10 +1690,9 @@ async function toggleStage(id) {
   const row = allData.find(r => r.id === id); if (!row) return;
   const newStage = stageOf(row) === 'followup' ? 'meeting' : 'followup';
   row.stage = newStage;
-  if (isConfigured()) {
-    const res = await sheetRequest({ action: 'update', id, stage: newStage });
-    if (!res || !res.success) showToast('Sheet update mein dikkat!', 'error');
-  }
+  saveCache(true);
+  enqueue('update', id, { stage: newStage });
+  syncOutbox();
   applyFilters(); applyFollowupFilters(); updateStats(); renderTodayMeetings(); renderUpcoming();
   showToast(newStage === 'followup' ? `${row.studio} Follow Up mein switch ho gaya!` : `${row.studio} wapas Meeting mein aa gaya!`);
 }
@@ -1339,7 +1752,7 @@ function formatTime12(t) {
   return `${h12}:${String(m).padStart(2,'0')} ${ampm}`;
 }
 function statusClass(s) { return s === 'Interested' ? 'badge-interested' : (s === 'Not Interested' ? 'badge-notinterested' : 'badge-pending'); }
-function statusIcon(s) { return s === 'Interested' ? '✅' : (s === 'Not Interested' ? '❌' : '⏳'); }
+function statusIcon(s) { return s === 'Interested' ? ic('check-circle') : (s === 'Not Interested' ? ic('x-circle') : ic('clock')); }
 function localDateStr(d) { return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }
 function todayStr() { return localDateStr(new Date()); }
 function isToday(dateStr) { return !!dateStr && dateStr === todayStr(); }
@@ -1384,7 +1797,7 @@ function groupRowsByDate(data) {
   return groups;
 }
 function formatGroupDate(key) {
-  if (key === '__nodate__') return '📌 Date Set Nahi Hai';
+  if (key === '__nodate__') return ic('pin') + ' Date Set Nahi Hai';
   const d = new Date(key + 'T00:00:00');
   if (isNaN(d.getTime())) return key;
   const label = d.toLocaleDateString('en-IN', { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' });
@@ -1393,7 +1806,7 @@ function formatGroupDate(key) {
   let tag = '';
   if (key === todayStr()) tag = ' · Aaj';
   else if (key === tmrwStr) tag = ' · Kal';
-  return `📅 ${label}${tag}`;
+  return `${ic('calendar')} ${label}${tag}`;
 }
 function groupHeaderHTML(key, count) {
   return `<div class="date-group-header-mobile"><span>${formatGroupDate(key)}</span><span class="date-group-count">${count} Meeting${count > 1 ? 's' : ''}</span></div>`;
@@ -1432,7 +1845,7 @@ function cardHTML(r, stageCtx) {
         <div class="lead-info">
           <div class="lead-name">${esc(r.name || r.studio)}</div>
           <div class="lead-studio">${esc(r.studio)}</div>
-          <a class="lead-phone" href="${telUrl(r.phone)}" onclick="event.stopPropagation()">📞 ${esc(r.phone)}</a>
+          <a class="lead-phone" href="${telUrl(r.phone)}" onclick="event.stopPropagation()">${ic('phone')} ${esc(r.phone)}</a>
           ${r.address ? `<div class="addr-line" onclick="openMap('${esc(r.address).replace(/'/g,"\\'")}');event.stopPropagation()"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>${esc(r.address)}</span></div>` : ''}
           ${r.meetingDate || r.meetingTime ? `<div class="meet-line"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg><span>${formatMeetingDT(r)}${isToday(r.meetingDate) ? ' · Aaj' : ''}</span></div>` : ''}
         </div>
@@ -1518,9 +1931,9 @@ function rowHTML(r, i, stageCtx) {
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </button>
             <div class="wa-dd" id="wadd_${r.id}">
-              <div style="padding:6px 12px 4px;font-size:10px;color:var(--muted);">${r.mode === 'Online' ? '🟢 Online Message' : '🟠 Offline Message'}</div>
-              <button onclick="deskSendWA('first','${r.id}')">📨 First Message (${r.mode})</button>
-              <hr><button onclick="deskSendWA('reminder','${r.id}')">🔔 Reminder (${r.mode})</button>
+              <div style="padding:6px 12px 4px;font-size:10px;color:var(--muted);">${r.mode === 'Online' ? ic('wifi','c-green') + ' Online Message' : ic('building','c-orange') + ' Offline Message'}</div>
+              <button onclick="deskSendWA('first','${r.id}')">${ic('send')} First Message (${r.mode})</button>
+              <hr><button onclick="deskSendWA('reminder','${r.id}')">${ic('bell')} Reminder (${r.mode})</button>
             </div>
           </div>
           <button class="tbl-btn call" onclick="openCall('${r.phone}')" title="Call">
@@ -1570,8 +1983,8 @@ function openWASheet(id) {
 
   const badge = document.getElementById('sheetModeBadge');
   badge.innerHTML = isOnline
-    ? '<span style="background:rgba(22,163,74,0.15);color:#15803d;padding:3px 12px;border-radius:20px;font-weight:600;">🟢 Online Query — Online message jayega</span>'
-    : '<span style="background:rgba(234,88,12,0.15);color:#c2410c;padding:3px 12px;border-radius:20px;font-weight:600;">🟠 Offline Query — Offline message jayega</span>';
+    ? `<span style="background:rgba(22,163,74,0.15);color:#15803d;padding:3px 12px;border-radius:20px;font-weight:600;">${ic('wifi')} Online Query — Online message jayega</span>`
+    : `<span style="background:rgba(234,88,12,0.15);color:#c2410c;padding:3px 12px;border-radius:20px;font-weight:600;">${ic('building')} Offline Query — Offline message jayega</span>`;
 
   document.getElementById('sheetFirstLabel').textContent = isOnline ? 'First Message (Online)' : 'First Message (Offline)';
   document.getElementById('sheetFirstSub').textContent = isOnline
@@ -1586,29 +1999,25 @@ function openWASheet(id) {
   mapItem.style.display = activeSheetRow.address ? 'flex' : 'none';
   document.getElementById('sheetMapSub').textContent = activeSheetRow.address || 'Address save nahi hai';
 
-  document.getElementById('sheetOverlay').classList.add('open');
-  document.getElementById('waSheet').classList.add('open');
+  openOverlay('waSheet');
 }
-function closeSheet() {
-  document.getElementById('sheetOverlay').classList.remove('open');
-  document.getElementById('waSheet').classList.remove('open');
-  activeSheetRow = null;
-}
+function closeSheet() { closeOverlay('waSheet'); }
+// Sheet band hone ke baad (history.back complete) tab action chalao
 function sheetSendWA(type) {
-  if (!activeSheetRow) return;
-  const msg = type === 'reminder' ? buildReminderMessage(activeSheetRow) : buildFirstMessage(activeSheetRow);
-  openWA(activeSheetRow.phone, msg);
+  const row = activeSheetRow; if (!row) return;
+  const msg = type === 'reminder' ? buildReminderMessage(row) : buildFirstMessage(row);
   closeSheet();
+  setTimeout(() => openWA(row.phone, msg), 250);
 }
 function sheetCall() {
-  if (!activeSheetRow) return;
-  openCall(activeSheetRow.phone);
+  const row = activeSheetRow; if (!row) return;
   closeSheet();
+  setTimeout(() => openCall(row.phone), 250);
 }
 function sheetOpenMap() {
-  if (!activeSheetRow) return;
-  openMap(activeSheetRow.address);
+  const row = activeSheetRow; if (!row) return;
   closeSheet();
+  setTimeout(() => openMap(row.address), 250);
 }
 
 // ── Edit ──
@@ -1626,7 +2035,7 @@ function openEdit(id) {
   document.getElementById('edit_meetingTimeTo').value = row.meetingTimeTo || '';
   document.getElementById('edit_status').value = row.status || 'Pending';
   document.getElementById('edit_mode').value = row.mode;
-  document.getElementById('editModal').classList.add('open');
+  openOverlay('editModal');
 }
 async function saveEdit() {
   const id = document.getElementById('edit_rowId').value;
@@ -1647,11 +2056,10 @@ async function saveEdit() {
   if (!upd.studio || !upd.phone) { showToast('Studio aur Phone zaroori hain!', 'error'); return; }
   if (upd.address !== row.address) { delete upd.lat; delete upd.lng; }
   Object.assign(row, upd);
-  if (isConfigured()) {
-    const res = await sheetRequest({ action: 'update', id, ...upd });
-    if (!res || !res.success) showToast('Sheet update mein dikkat!', 'error');
-  }
-  applyFilters(); updateStats(); renderTodayMeetings(); renderUpcoming();
+  saveCache(true);
+  enqueue('update', id, upd);
+  syncOutbox();
+  refreshUI();
   closeModal('editModal');
   showToast('Query update ho gaya!');
 }
@@ -1659,21 +2067,20 @@ async function saveEdit() {
 // ── Delete ──
 function openDelete(id) {
   document.getElementById('delete_rowId').value = id;
-  document.getElementById('deleteModal').classList.add('open');
+  openOverlay('deleteModal');
 }
 async function confirmDelete() {
   const id = document.getElementById('delete_rowId').value;
   allData = allData.filter(r => r.id !== id);
-  if (isConfigured()) {
-    const res = await sheetRequest({ action: 'delete', id });
-    if (!res || !res.success) showToast('Sheet delete mein dikkat!', 'error');
-  }
-  applyFilters(); updateStats(); renderTodayMeetings(); renderUpcoming();
+  saveCache(true);       // phone se turant delete
+  enqueue('delete', id); // net aate hi sheet se bhi delete
+  syncOutbox();
+  refreshUI();
   closeModal('deleteModal');
   showToast('Query delete ho gaya!');
 }
 
-function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+function closeModal(id) { closeOverlay(id); }
 
 document.querySelectorAll('.modal-overlay').forEach(o => {
   o.addEventListener('click', function(e) { if (e.target === this) closeModal(this.id); });
@@ -1721,10 +2128,13 @@ function renderTodayMeetings(list) {
   document.getElementById('todayCount').textContent = today.length;
   const box = document.getElementById('todayList');
 
+  const tc = document.getElementById('todayCards');
   if (!today.length) {
     box.innerHTML = `<div class="today-empty">Aaj koi meeting schedule nahi hai.</div>`;
+    if (tc) tc.innerHTML = '';
     return;
   }
+  if (tc) tc.innerHTML = today.map(r => cardHTML(r, 'meeting')).join('');
 
   // Nearest tag: only when we actually have distances computed
   let nearestId = null;
@@ -1743,7 +2153,7 @@ function renderTodayMeetings(list) {
         <div class="today-name">${esc(r.name || r.studio)}${r.id === nearestId ? ' <span class=\"nearest-tag\">Nearest</span>' : ''}</div>
         <div class="today-studio">${esc(r.studio)}${r.address ? ' · ' + esc(r.address) : ''}</div>
       </div>
-      ${typeof r._dist === 'number' ? `<div class="today-dist">📍 ${r._dist < 1 ? Math.round(r._dist*1000)+'m' : r._dist.toFixed(1)+'km'}</div>` : ''}
+      ${typeof r._dist === 'number' ? `<div class="today-dist">${ic('pin')} ${r._dist < 1 ? Math.round(r._dist*1000)+'m' : r._dist.toFixed(1)+'km'}</div>` : ''}
       <button class="today-map-btn" onclick="event.stopPropagation();openMapSmartById('${r.id}')" title="Location Dekhein">
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
       </button>
@@ -1844,10 +2254,95 @@ async function locateAndSortToday() {
   }, { enableHighAccuracy: true, timeout: 12000 });
 }
 
+// ============================================================
+//  SETTINGS + LOGIN
+// ============================================================
+const PW_KEY = 'ominibase_pw_v1', AUTH_KEY = 'ominibase_auth_v1';
+const getPw = () => { try { return localStorage.getItem(PW_KEY) || ''; } catch { return ''; } };
+
+function showLoginUI() {
+  const has = !!getPw();
+  document.getElementById('loginTitle').textContent = has ? 'Login' : 'Password Set Karein';
+  document.getElementById('loginSub').textContent = has ? 'Ominibase CRM' : 'Pehli baar — apna password banayein';
+  document.getElementById('loginPw2').style.display = has ? 'none' : 'block';
+  document.getElementById('loginBtn').textContent = has ? 'Login' : 'Password Save Karein';
+  document.getElementById('loginErr').textContent = '';
+  document.getElementById('loginPw').value = '';
+  document.getElementById('loginPw2').value = '';
+}
+function doLogin() {
+  const p = document.getElementById('loginPw').value;
+  const err = document.getElementById('loginErr');
+  if (!getPw()) {
+    if (p.length < 4) { err.textContent = 'Kam se kam 4 character ka password rakhein'; return; }
+    if (p !== document.getElementById('loginPw2').value) { err.textContent = 'Dono password match nahi hue'; return; }
+    try { localStorage.setItem(PW_KEY, p); } catch {}
+  } else if (p !== getPw()) {
+    err.textContent = 'Galat password'; return;
+  }
+  try { localStorage.setItem(AUTH_KEY, '1'); } catch {}
+  document.documentElement.classList.remove('locked');
+  document.getElementById('loginPw').value = ''; document.getElementById('loginPw2').value = '';
+}
+function logout() {
+  try { localStorage.removeItem(AUTH_KEY); } catch {}
+  showLoginUI();
+  document.documentElement.classList.add('locked');
+}
+['loginPw', 'loginPw2'].forEach(id => document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); }));
+showLoginUI();
+
+function renderSettings() {
+  const t = getTpl();
+  document.getElementById('set_firstOnline').value = t.firstOnline;
+  document.getElementById('set_firstOffline').value = t.firstOffline;
+  document.getElementById('set_reminder').value = t.reminder;
+  document.getElementById('set_services').innerHTML = Object.keys(DEFAULT_TPL.services).map(cat =>
+    `<div style="margin-bottom:6px"><div style="font-size:11px;color:var(--muted);margin:6px 0 3px">${esc(cat)}</div><input type="text" data-cat="${esc(cat)}" value="${esc(t.services[cat])}"></div>`
+  ).join('');
+  document.getElementById('set_curPw').value = getPw();
+  updateSyncPanel();
+}
+function saveTemplates() {
+  const g = id => document.getElementById(id).value;
+  const t = {
+    firstOnline: g('set_firstOnline').trim() || DEFAULT_TPL.firstOnline,
+    firstOffline: g('set_firstOffline').trim() || DEFAULT_TPL.firstOffline,
+    reminder: g('set_reminder').trim() || DEFAULT_TPL.reminder,
+    services: {}
+  };
+  document.querySelectorAll('#set_services input').forEach(i => { t.services[i.dataset.cat] = i.value.trim() || DEFAULT_TPL.services[i.dataset.cat]; });
+  try { localStorage.setItem(TPL_KEY, JSON.stringify(t)); showToast('WhatsApp messages save ho gaye'); }
+  catch { showToast('Save nahi ho paya', 'error'); }
+}
+function resetTemplates() {
+  if (!confirm('Saare WhatsApp messages default par wapas karein?')) return;
+  try { localStorage.removeItem(TPL_KEY); } catch {}
+  renderSettings();
+  showToast('Default messages wapas aa gaye');
+}
+function changePassword() {
+  const inp = document.getElementById('set_newPw');
+  const n = inp.value;
+  if (n.length < 4) { showToast('Kam se kam 4 character ka password rakhein', 'error'); return; }
+  try { localStorage.setItem(PW_KEY, n); } catch {}
+  inp.value = '';
+  document.getElementById('set_curPw').value = n;
+  showToast('Password badal gaya');
+}
+function togglePwView() {
+  const i = document.getElementById('set_curPw');
+  const show = i.type === 'password';
+  i.type = show ? 'text' : 'password';
+  document.getElementById('pwEyeBtn').innerHTML = `<svg class="ic"><use href="#i-${show ? 'eye-off' : 'eye'}"/></svg>`;
+}
+
 // Init — pehle saved data turant dikhao, phir live data laao
 (function init() {
+  if (urlParams.get('view') === 'all') { switchTab('leads'); setMeetView('all'); }
   const cached = loadCache();
-  if (cached && cached.length) { allData = cached; refreshUI(); }
+  if (cached && cached.length) { allData = overlayOutbox(cached); refreshUI(); }
+  updateSyncPill();
   loadData();
 })();
 // Naye device / wapas app khulne / internet aane par auto-refresh
