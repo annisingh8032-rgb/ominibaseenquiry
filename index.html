@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
 <title>Ominibase CRM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f2f7f4;--surface:#ffffff;--card:#ffffff;
@@ -28,6 +28,7 @@
 html{height:100%;overscroll-behavior:none;}
 body{
   font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);
+  line-height:1.5;letter-spacing:0.01em;-webkit-font-smoothing:antialiased;
   min-height:100vh;min-height:100dvh;
   padding-top:var(--safe-top);
   overscroll-behavior:none;
@@ -42,7 +43,7 @@ header{
 }
 .logo-wrap{display:flex;align-items:center;gap:10px;flex:1;}
 .logo-img{width:36px;height:36px;border-radius:50%;object-fit:cover;}
-.logo-text{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;
+.logo-text{font-family:'Plus Jakarta Sans','DM Sans',sans-serif;font-size:18px;font-weight:800;
   background:linear-gradient(135deg,#0e3128,#1f9d6e);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .logo-sub{font-size:10px;color:var(--muted);}
@@ -112,7 +113,7 @@ main{padding:0 0 calc(16px + var(--safe-bottom));}
   background:linear-gradient(90deg,var(--accent),var(--accent2));
 }
 .form-title{
-  font-family:'Syne',sans-serif;font-size:16px;font-weight:700;
+  font-family:'Plus Jakarta Sans','DM Sans',sans-serif;font-size:16px;font-weight:700;
   margin-bottom:16px;display:flex;align-items:center;gap:8px;
 }
 .form-stack{display:flex;flex-direction:column;gap:14px;}
@@ -220,24 +221,22 @@ main{padding:0 0 calc(16px + var(--safe-bottom));}
 
 
 /* ── DATE GROUP HEADERS (Meeting list grouped by date) ── */
-.date-group-header{
-  display:flex;align-items:center;justify-content:space-between;gap:8px;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  color:#fff;border-radius:10px;padding:9px 14px;
-  font-family:'Syne',sans-serif;font-weight:700;font-size:12.5px;
-  letter-spacing:0.02em;
-}
+.date-group-header,
 .date-group-header-mobile{
-  display:flex;align-items:center;justify-content:space-between;gap:8px;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  color:#fff;border-radius:10px;padding:9px 14px;margin:14px 0 4px;
-  font-family:'Syne',sans-serif;font-weight:700;font-size:12.5px;
-  letter-spacing:0.02em;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  background:#e4f3ec;color:var(--accent);
+  border:1.5px solid rgba(31,157,110,0.55);border-left:6px solid var(--accent);
+  border-radius:12px;padding:11px 14px;
+  font-family:'DM Sans',sans-serif;font-weight:700;font-size:14.5px;letter-spacing:0.01em;
+  box-shadow:0 2px 8px rgba(14,49,40,0.08);
+  -webkit-user-select:none;user-select:none;
 }
+.date-group-header-mobile{margin:16px 0 6px;}
 .date-group-header-mobile:first-child{margin-top:0;}
+.date-group-header .ic,.date-group-header-mobile .ic{width:1.15em;height:1.15em;margin-right:5px;color:var(--accent2);}
 .date-group-count{
-  background:rgba(255,255,255,0.22);border-radius:20px;padding:2px 10px;
-  font-size:10.5px;font-weight:700;white-space:nowrap;flex-shrink:0;
+  background:var(--accent);color:#fff;border-radius:20px;padding:3px 12px;
+  font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:700;white-space:nowrap;flex-shrink:0;
 }
 tr.date-group-row td{padding:14px 0 6px !important;border:none !important;background:transparent !important;}
 tr.date-group-row:first-child td{padding-top:0 !important;}
@@ -253,7 +252,7 @@ tr.date-group-row:first-child td{padding-top:0 !important;}
   width:42px;height:42px;border-radius:12px;flex-shrink:0;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
   display:flex;align-items:center;justify-content:center;
-  font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#fff;
+  font-family:'Plus Jakarta Sans','DM Sans',sans-serif;font-size:16px;font-weight:700;color:#fff;
 }
 .lead-info{flex:1;min-width:0;}
 .lead-name{font-weight:600;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -343,7 +342,7 @@ tr.date-group-row:first-child td{padding-top:0 !important;}
   position:relative;
 }
 .modal-drag{width:36px;height:4px;background:var(--border2);border-radius:2px;margin:0 auto 16px;}
-.modal-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:18px;}
+.modal-title{font-family:'Plus Jakarta Sans','DM Sans',sans-serif;font-size:17px;font-weight:700;margin-bottom:18px;}
 .modal-form-stack{display:flex;flex-direction:column;gap:12px;}
 .modal-actions{display:flex;gap:10px;margin-top:18px;}
 .btn-cancel{
@@ -398,7 +397,7 @@ tr.date-group-row:first-child td{padding-top:0 !important;}
   padding:14px;margin-bottom:16px;
 }
 .today-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap;}
-.today-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;display:flex;align-items:center;gap:6px;}
+.today-title{font-family:'Plus Jakarta Sans','DM Sans',sans-serif;font-size:14px;font-weight:700;display:flex;align-items:center;gap:6px;}
 .today-count{background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;}
 .locate-btn{
   background:var(--card);border:1px solid var(--border);border-radius:8px;
@@ -413,7 +412,7 @@ tr.date-group-row:first-child td{padding-top:0 !important;}
 }
 .today-item.nearest{border-color:var(--green);background:rgba(22,163,74,0.08);}
 .today-time{
-  font-family:'Syne',sans-serif;font-weight:700;font-size:12px;color:var(--accent2);
+  font-family:'Plus Jakarta Sans','DM Sans',sans-serif;font-weight:700;font-size:12px;color:var(--accent2);
   min-width:52px;max-width:88px;text-align:center;flex-shrink:0;line-height:1.35;
 }
 .today-info{flex:1;min-width:0;}
@@ -439,7 +438,7 @@ tr.date-group-row:first-child td{padding-top:0 !important;}
   padding:14px;margin-bottom:16px;
 }
 .upcoming-title{
-  font-family:'Syne',sans-serif;font-size:14px;font-weight:700;
+  font-family:'Plus Jakarta Sans','DM Sans',sans-serif;font-size:14px;font-weight:700;
   display:flex;align-items:center;gap:6px;margin-bottom:10px;
 }
 .upcoming-list{display:flex;flex-direction:column;gap:6px;}
@@ -460,7 +459,7 @@ tr.date-group-row:first-child td{padding-top:0 !important;}
   display:flex;align-items:center;justify-content:space-between;
   margin-bottom:14px;
 }
-.section-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;}
+.section-title{font-family:'Plus Jakarta Sans','DM Sans',sans-serif;font-size:16px;font-weight:700;}
 .refresh-btn{
   background:var(--card);border:1px solid var(--border);border-radius:8px;
   padding:7px 12px;color:var(--accent2);font-size:12px;cursor:pointer;
@@ -560,7 +559,7 @@ tbody td{padding:12px 14px;vertical-align:middle;}
 
 /* ── SETTINGS ── */
 .set-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:14px;}
-.set-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:12px;}
+.set-title{font-family:'Plus Jakarta Sans','DM Sans',sans-serif;font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:12px;}
 .set-title .ic{color:var(--accent2);width:17px;height:17px;}
 .set-card label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin:10px 0 5px;}
 .set-card textarea,.set-card input[type=text],.set-card input[type=password]{width:100%;background:var(--input-bg);border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);outline:none;}
@@ -572,8 +571,6 @@ tbody td{padding:12px 14px;vertical-align:middle;}
 .btn-main{background:var(--accent);color:#fff;border:none;}
 .btn-ghost{background:var(--card);color:var(--accent2);border:1px solid var(--border2);}
 .btn-danger{background:rgba(220,38,38,.08);color:var(--red);border:1px solid rgba(220,38,38,.3);}
-.pw-row{display:flex;gap:8px;align-items:center;}
-.pw-row button{flex-shrink:0;width:42px;height:42px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--accent2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:17px;}
 .sy-row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;}
 .sy-row:last-of-type{border-bottom:none;}
 .sy-row span:first-child{color:var(--muted);}
@@ -586,16 +583,29 @@ tbody td{padding:12px 14px;vertical-align:middle;}
 html.locked #loginScreen{display:flex;}
 .login-card{background:#fff;border-radius:20px;padding:26px 22px;width:100%;max-width:340px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.3);}
 .login-logo{width:64px;height:64px;border-radius:50%;margin-bottom:10px;}
-.login-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--accent);}
+.login-title{font-family:'Plus Jakarta Sans','DM Sans',sans-serif;font-size:20px;font-weight:800;color:var(--accent);}
 .login-sub{font-size:12px;color:var(--muted);margin:4px 0 16px;}
 .login-card input{width:100%;background:var(--input-bg);border:1px solid var(--border2);border-radius:12px;padding:13px 14px;font-size:15px;margin-bottom:10px;outline:none;font-family:'DM Sans',sans-serif;}
 .login-card input:focus{border-color:var(--accent);}
 .login-err{color:var(--red);font-size:12px;min-height:16px;margin-bottom:8px;}
 .login-card .btn-submit{width:100%;justify-content:center;}
+
+/* ── DEMO SECTION ── */
+.btn-add-demo{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;display:flex;align-items:center;gap:5px;}
+.btn-add-demo:active{opacity:.85;}
+.demo-list{display:flex;flex-direction:column;gap:10px;}
+@media(min-width:768px){
+  .demo-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;align-items:start;}
+  .demo-list .date-group-header-mobile,.demo-list .empty-state{grid-column:1/-1;}
+}
+.req{color:var(--red);}
+.delete-confirm-body p.delete-name{color:var(--text);font-size:18px;font-weight:700;margin-top:6px;word-break:break-word;}
+.form-title,.section-title,.set-title,.modal-title,.today-title,.upcoming-title,.lead-avatar,.login-title{letter-spacing:0.02em;}
+.set-title,.section-title,.form-title{line-height:1.4;}
 </style>
 </head>
 <body>
-<script>try{if(!(localStorage.getItem('ominibase_pw_v1')&&localStorage.getItem('ominibase_auth_v1')==='1'))document.documentElement.classList.add('locked')}catch(e){}</script>
+<script>try{if(localStorage.getItem('ominibase_auth_v1')!=='1')document.documentElement.classList.add('locked')}catch(e){document.documentElement.classList.add('locked')}</script>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="i-bolt" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
 <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
@@ -627,6 +637,7 @@ html.locked #loginScreen{display:flex;}
 <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>
 <symbol id="i-key" viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></symbol>
 <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
 </defs></svg>
 
 <!-- LOGIN -->
@@ -636,7 +647,6 @@ html.locked #loginScreen{display:flex;}
     <div class="login-title" id="loginTitle">Login</div>
     <div class="login-sub" id="loginSub"></div>
     <input type="password" id="loginPw" placeholder="Password" autocomplete="current-password">
-    <input type="password" id="loginPw2" placeholder="Password dobara daalein" style="display:none" autocomplete="new-password">
     <div class="login-err" id="loginErr"></div>
     <button class="btn-submit" id="loginBtn" onclick="doLogin()">Login</button>
   </div>
@@ -690,6 +700,10 @@ html.locked #loginScreen{display:flex;}
   <button class="tab-btn" onclick="switchTab('followup')" id="tab-followup">
     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
     Follow Up
+  </button>
+  <button class="tab-btn" onclick="switchTab('demo')" id="tab-demo">
+    <svg class="ic"><use href="#i-monitor"/></svg>
+    Demo
   </button>
   <button class="tab-btn" onclick="switchTab('settings')" id="tab-settings">
     <svg class="ic"><use href="#i-settings"/></svg>
@@ -918,6 +932,32 @@ html.locked #loginScreen{display:flex;}
   </div>
 </div>
 
+<!-- TAB: DEMO -->
+<div class="tab-panel" id="panel-demo">
+  <div class="section-header-row">
+    <div class="section-title">Demo</div>
+    <div style="display:flex;gap:8px;align-items:center"><button class="refresh-btn" onclick="refreshDemos()"><svg class="ic"><use href="#i-refresh"/></svg></button><button class="btn-add-demo" onclick="openDemoForm()">+ Naya Demo</button></div>
+  </div>
+
+  <div class="seg">
+    <button id="seg-demo-today" class="active" onclick="setDemoView('today')"><svg class="ic"><use href="#i-sun"/></svg> Today Demo</button>
+    <button id="seg-demo-all" onclick="setDemoView('all')"><svg class="ic"><use href="#i-calendar"/></svg> All Demo</button>
+  </div>
+
+  <div id="demoToday">
+    <div class="demo-list" id="demoTodayList"></div>
+  </div>
+
+  <div id="demoAll" style="display:none">
+    <div class="search-box">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/></svg>
+      <input id="searchDemo" type="text" placeholder="Name, Business ya Phone se search karein..." oninput="renderDemos()"/>
+      <button class="search-clear" id="searchDemoClear" onclick="document.getElementById('searchDemo').value='';renderDemos();"><svg class="ic"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="demo-list" id="demoAllList"></div>
+  </div>
+</div>
+
 <!-- TAB: SETTINGS -->
 <div class="tab-panel" id="panel-settings">
   <div class="section-header-row"><div class="section-title">Settings</div></div>
@@ -937,19 +977,6 @@ html.locked #loginScreen{display:flex;}
       <button class="btn-ghost" onclick="resetTemplates()">Default Karein</button>
       <button class="btn-main" onclick="saveTemplates()"><svg class="ic"><use href="#i-check"/></svg> Save Karein</button>
     </div>
-  </div>
-
-  <div class="set-card">
-    <div class="set-title"><svg class="ic"><use href="#i-key"/></svg> Password</div>
-    <label>Abhi ka password</label>
-    <div class="pw-row">
-      <input type="text" id="set_curPw" readonly>
-      <button onclick="togglePwView()" id="pwEyeBtn" title="Show / Hide"><svg class="ic"><use href="#i-eye-off"/></svg></button>
-    </div>
-    <label>Naya password</label>
-    <input type="password" id="set_newPw" placeholder="Kam se kam 4 character" autocomplete="new-password">
-    <div class="set-btns"><button class="btn-main" onclick="changePassword()">Password Badlein</button></div>
-    <div class="set-hint">Ye password sirf is device par save hota hai. Dusre phone par alag se set karna hoga.</div>
   </div>
 
   <div class="set-card">
@@ -1085,7 +1112,7 @@ html.locked #loginScreen{display:flex;}
     <div class="delete-confirm-body">
       <div class="del-icon c-red"><svg class="ic"><use href="#i-trash"/></svg></div>
       <div class="modal-title" style="text-align:center;">Delete Karein?</div>
-      <p>Is query ko permanently delete kiya jayega.<br><span style="color:var(--red);font-size:12px;">Google Sheet se bhi remove hoga.</span></p>
+      <p class="delete-name" id="delete_name"></p>
     </div>
     <input type="hidden" id="delete_rowId">
     <div class="modal-actions" style="margin-top:20px;">
@@ -1095,9 +1122,54 @@ html.locked #loginScreen{display:flex;}
   </div>
 </div>
 
+<!-- DEMO FORM MODAL -->
+<div class="modal-overlay" id="demoModal">
+  <div class="modal">
+    <div class="modal-drag"></div>
+    <div class="modal-title"><svg class="ic"><use href="#i-monitor"/></svg> <span id="demoModalTitle">Naya Demo Add Karein</span></div>
+    <input type="hidden" id="demo_id">
+    <div class="modal-form-stack">
+      <div class="form-group"><label>Name (Optional)</label><input id="demo_name" type="text" placeholder="Rahul Sharma" autocomplete="off"/></div>
+      <div class="form-group"><label>Business Name <span class="req">*</span></label><input id="demo_business" type="text" placeholder="FitZone Academy" autocomplete="off"/></div>
+      <div class="form-group"><label>Phone No <span class="req">*</span></label><input id="demo_phone" type="tel" placeholder="9876543210" maxlength="10" inputmode="numeric"/></div>
+      <div class="form-group"><label>Address (Optional)</label><input id="demo_address" type="text" placeholder="Shop 12, MG Road, Patna" autocomplete="off"/></div>
+      <div class="form-group">
+        <label>Service (Optional)</label>
+        <input id="demo_service" type="text" list="demoServiceList" placeholder="Kaunsi service ka demo dena hai" autocomplete="off"/>
+        <datalist id="demoServiceList">
+          <option value="Custom Website"><option value="Custom Form"><option value="CMS">
+          <option value="Google Form"><option value="Attendance Management System"><option value="Full Package">
+        </datalist>
+      </div>
+      <div class="form-group"><label>Demo Date <span class="req">*</span></label><input id="demo_date" type="date"/></div>
+      <div class="form-group"><label>Demo Time (Optional)</label><input id="demo_time" type="time"/></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('demoModal')">Cancel</button>
+      <button class="btn-save" onclick="saveDemo()">Save Karein</button>
+    </div>
+  </div>
+</div>
+
+<!-- DEMO DELETE MODAL -->
+<div class="modal-overlay" id="demoDeleteModal">
+  <div class="modal">
+    <div class="modal-drag"></div>
+    <div class="delete-confirm-body">
+      <div class="del-icon c-red"><svg class="ic"><use href="#i-trash"/></svg></div>
+      <div class="modal-title" style="text-align:center;">Demo Delete Karein?</div>
+      <p class="delete-name" id="demo_delete_name"></p>
+    </div>
+    <input type="hidden" id="demo_delete_id">
+    <div class="modal-actions" style="margin-top:20px;">
+      <button class="btn-cancel" onclick="closeModal('demoDeleteModal')">Cancel</button>
+      <button class="btn-del-confirm" onclick="confirmDemoDelete()">Haan, Delete</button>
+    </div>
+  </div>
+</div>
+
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
-<div id="syncPill" onclick="syncOutbox(true)" title="Tap karke abhi sync karein"></div>
 
 <script>
 // ============================================================
@@ -1204,6 +1276,7 @@ function switchTab(tab, fromPop) {
   currentTab = tab;
   window.scrollTo(0, 0);
   if (tab === 'settings') renderSettings();
+  else if (tab === 'demo') { renderDemos(); pullDemos(); }
   else if (tab === 'leads' || tab === 'followup') loadData();
 }
 
@@ -1403,6 +1476,11 @@ function cleanForSheet(obj) {
 }
 function enqueue(action, id, data) {
   const list = getOutbox();
+  if (action === 'demoDelete') {
+    // Add pehle gaya ho sakta hai, isliye delete bhi bhejna hai; bas pending updates hata do
+    setOutbox(list.filter(o => !(o.action === 'demoUpdate' && o.id === id)).concat([{ opId: id + '-dd-' + Date.now(), action, id, data: {}, fails: 0 }]));
+    return;
+  }
   if (action === 'delete') {
     // Agar yeh lead abhi tak sheet par gayi hi nahi thi, toh add + delete dono hata do
     const addIdx = list.findIndex(o => o.action === 'add' && o.id === id && !o.tried);
@@ -1430,13 +1508,7 @@ function overlayOutbox(rows) {
   return out;
 }
 
-function updateSyncPill() {
-  const pill = document.getElementById('syncPill'); if (!pill) return;
-  const n = getOutbox().length;
-  if (!n) { pill.className = ''; return; }
-  pill.innerHTML = syncing ? `${ic('refresh')} Sync ho raha hai… (${n})` : `${ic('clock')} ${n} change sync baaki — tap karein`;
-  pill.className = 'show pending';
-}
+function updateSyncPill() { /* sync pill ab nahi dikhta */ }
 
 async function syncOutbox(manual) {
   if (syncing) return;
@@ -1550,6 +1622,7 @@ async function loadData(force, silent) {
       const sig = JSON.stringify(merged);
       lastLoadAt = Date.now();
       lastSyncErr = '';
+      if (currentTab === 'demo' || !demosPulledOnce) pullDemos();
       if (silent && sig === lastDataSig) return; // kuch badla nahi — UI dobara draw nahi karna
       lastDataSig = sig;
       allData = merged;
@@ -2066,7 +2139,9 @@ async function saveEdit() {
 
 // ── Delete ──
 function openDelete(id) {
+  const row = allData.find(r => r.id === id);
   document.getElementById('delete_rowId').value = id;
+  document.getElementById('delete_name').textContent = row ? (row.studio || row.name || '') : '';
   openOverlay('deleteModal');
 }
 async function confirmDelete() {
@@ -2255,41 +2330,219 @@ async function locateAndSortToday() {
 }
 
 // ============================================================
-//  SETTINGS + LOGIN
+//  🎬 DEMO SECTION (data isi phone mein save hota hai)
 // ============================================================
-const PW_KEY = 'ominibase_pw_v1', AUTH_KEY = 'ominibase_auth_v1';
-const getPw = () => { try { return localStorage.getItem(PW_KEY) || ''; } catch { return ''; } };
+const DEMO_KEY = 'ominibase_demos_v1';
+let demos = [];
+let demoView = 'today';
+
+function loadDemos() {
+  try { const d = JSON.parse(localStorage.getItem(DEMO_KEY) || '[]'); demos = Array.isArray(d) ? d : []; }
+  catch { demos = []; }
+}
+function saveDemos() {
+  try { localStorage.setItem(DEMO_KEY, JSON.stringify(demos)); }
+  catch { showToast('Save nahi ho paya', 'error'); }
+}
+function setDemoView(v) {
+  demoView = v;
+  document.getElementById('demoToday').style.display = v === 'today' ? '' : 'none';
+  document.getElementById('demoAll').style.display = v === 'all' ? '' : 'none';
+  document.getElementById('seg-demo-today').classList.toggle('active', v === 'today');
+  document.getElementById('seg-demo-all').classList.toggle('active', v === 'all');
+}
+function sortDemos(list) {
+  return [...list].sort((a, b) => {
+    const da = a.demoDate || '', db = b.demoDate || '';
+    if (da !== db) { if (!da) return 1; if (!db) return -1; return da < db ? -1 : 1; }
+    const ta = a.demoTime || '', tb = b.demoTime || '';
+    if (ta === tb) return 0;
+    if (!ta) return 1; if (!tb) return -1;
+    return ta < tb ? -1 : 1;
+  });
+}
+function demoCardHTML(d) {
+  const when = formatMeetingDT({ meetingDate: d.demoDate, meetingTime: d.demoTime });
+  return `
+    <div class="lead-card">
+      <div class="lead-card-top">
+        <div class="lead-avatar">${initials(d.name || d.business)}</div>
+        <div class="lead-info">
+          <div class="lead-name">${esc(d.name || d.business)}</div>
+          <div class="lead-studio">${esc(d.business)}</div>
+          <a class="lead-phone" href="${telUrl(d.phone)}">${ic('phone')} ${esc(d.phone)}</a>
+          ${d.address ? `<div class="addr-line" onclick="openMap('${esc(d.address).replace(/'/g,"\\'")}')">${ic('pin')}<span>${esc(d.address)}</span></div>` : ''}
+          ${d.demoDate ? `<div class="meet-line">${ic('calendar')}<span>${when}${isToday(d.demoDate) ? ' · Aaj' : ''}</span></div>` : ''}
+        </div>
+      </div>
+      ${d.service ? `<div class="lead-card-meta"><span class="cat-badge">${esc(d.service)}</span></div>` : ''}
+      <div class="lead-actions">
+        <button class="act-btn act-wa" onclick="demoWhatsApp('${d.id}')">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </button>
+        <button class="act-btn act-edit" onclick="openDemoForm('${d.id}')">${ic('edit')} Edit</button>
+        <button class="act-btn act-del" onclick="openDemoDelete('${d.id}')">${ic('trash')} Del</button>
+      </div>
+    </div>`;
+}
+function renderDemos() {
+  const todayList = sortDemos(demos.filter(d => isToday(d.demoDate)));
+  const q = (document.getElementById('searchDemo').value || '').trim().toLowerCase();
+  document.getElementById('searchDemoClear').classList.toggle('show', !!q);
+  const allList = sortDemos(demos.filter(d => !q || [d.name, d.business, d.phone].filter(Boolean).join(' ').toLowerCase().includes(q)));
+
+  document.getElementById('seg-demo-today').innerHTML = `${ic('sun')} Today Demo (${todayList.length})`;
+  document.getElementById('seg-demo-all').innerHTML = `${ic('calendar')} All Demo (${demos.length})`;
+
+  const empty = msg => `<div class="empty-state"><p>${msg}</p></div>`;
+
+  document.getElementById('demoTodayList').innerHTML = todayList.length
+    ? todayList.map(demoCardHTML).join('')
+    : empty('Aaj koi demo schedule nahi hai.');
+
+  const allBox = document.getElementById('demoAllList');
+  if (!allList.length) { allBox.innerHTML = empty(q ? 'Koi demo nahi mila.' : 'Abhi koi demo add nahi hua.<br>Upar "+ Naya Demo" dabakar add karein.'); return; }
+  const groups = new Map();
+  allList.forEach(d => { const k = d.demoDate || '__nodate__'; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(d); });
+  let html = '';
+  groups.forEach((rows, key) => {
+    html += `<div class="date-group-header-mobile"><span>${formatGroupDate(key)}</span><span class="date-group-count">${rows.length} Demo</span></div>`;
+    html += rows.map(demoCardHTML).join('');
+  });
+  allBox.innerHTML = html;
+}
+function openDemoForm(id) {
+  const d = id ? demos.find(x => x.id === id) : null;
+  document.getElementById('demoModalTitle').textContent = d ? 'Demo Edit Karein' : 'Naya Demo Add Karein';
+  document.getElementById('demo_id').value = d ? d.id : '';
+  document.getElementById('demo_name').value = d ? (d.name || '') : '';
+  document.getElementById('demo_business').value = d ? (d.business || '') : '';
+  document.getElementById('demo_phone').value = d ? (d.phone || '') : '';
+  document.getElementById('demo_address').value = d ? (d.address || '') : '';
+  document.getElementById('demo_service').value = d ? (d.service || '') : '';
+  document.getElementById('demo_date').value = d ? (d.demoDate || '') : todayStr();
+  document.getElementById('demo_time').value = d ? (d.demoTime || '') : '';
+  openOverlay('demoModal');
+}
+function saveDemo() {
+  const g = id => document.getElementById(id).value.trim();
+  const id = g('demo_id');
+  const rec = {
+    name: g('demo_name'), business: g('demo_business'), phone: g('demo_phone'),
+    address: g('demo_address'), service: g('demo_service'),
+    demoDate: g('demo_date'), demoTime: g('demo_time')
+  };
+  if (!rec.business || !rec.phone || !rec.demoDate) { showToast('Business Name, Phone aur Demo Date zaroori hain!', 'error'); return; }
+  if (!/^\d{10}$/.test(rec.phone)) { showToast('10-digit phone number daalo!', 'error'); return; }
+  if (id) {
+    const i = demos.findIndex(x => x.id === id);
+    if (i !== -1) { demos[i] = { ...demos[i], ...rec }; enqueue('demoUpdate', id, demos[i]); }
+  } else {
+    const nd = { id: Date.now().toString(), ...rec };
+    demos.unshift(nd);
+    enqueue('demoAdd', nd.id, nd);
+  }
+  saveDemos();
+  syncOutbox();
+  renderDemos();
+  closeModal('demoModal');
+  showToast(id ? 'Demo update ho gaya!' : 'Demo add ho gaya!');
+}
+// WhatsApp chat khulta hai bina kisi pre-filled message ke — aap khud type karein
+function demoWhatsApp(id) {
+  const d = demos.find(x => x.id === id); if (!d) return;
+  openWA(d.phone, '');
+}
+function openDemoDelete(id) {
+  const d = demos.find(x => x.id === id);
+  document.getElementById('demo_delete_id').value = id;
+  document.getElementById('demo_delete_name').textContent = d ? (d.business || d.name || '') : '';
+  openOverlay('demoDeleteModal');
+}
+function confirmDemoDelete() {
+  const id = document.getElementById('demo_delete_id').value;
+  demos = demos.filter(x => x.id !== id);
+  saveDemos();
+  enqueue('demoDelete', id);
+  syncOutbox();
+  renderDemos();
+  closeModal('demoDeleteModal');
+  showToast('Demo delete ho gaya!');
+}
+// ── Demo: Google Sheet se data laana ──
+let demosPulledOnce = false, isPullingDemos = false, lastDemoSig = '';
+const DEMO_MIG_KEY = 'ominibase_demos_synced_v1';
+function overlayDemoOutbox(rows) {
+  let out = rows.slice();
+  getOutbox().forEach(op => {
+    if (op.action === 'demoAdd') { if (!out.some(r => r.id === op.id)) out.unshift({ ...op.data, id: op.id }); }
+    else if (op.action === 'demoUpdate') { const i = out.findIndex(r => r.id === op.id); if (i !== -1) out[i] = { ...out[i], ...op.data, id: op.id }; }
+    else if (op.action === 'demoDelete') { out = out.filter(r => r.id !== op.id); }
+  });
+  return out;
+}
+async function pullDemos() {
+  if (!isConfigured() || isPullingDemos || !navigator.onLine) return;
+  isPullingDemos = true;
+  try {
+    const epoch = syncEpoch;
+    const res = await sheetRequest({ action: 'demoGetAll' });
+    if (!res || !Array.isArray(res.data)) return;   // sheet script update nahi hui / net slow — local data safe rehta hai
+    if (epoch !== syncEpoch) return;                 // beech mein sync hua, agle round mein aayega
+    demosPulledOnce = true;
+    const server = res.data.map(r => ({ ...r, id: String(r.id) }));
+    // Pehli baar: phone mein jo purane demo hain wo sheet par bhej do
+    if (!localStorage.getItem(DEMO_MIG_KEY)) {
+      const ids = new Set(server.map(r => r.id));
+      demos.forEach(d => { if (!ids.has(String(d.id))) enqueue('demoAdd', d.id, d); });
+      try { localStorage.setItem(DEMO_MIG_KEY, '1'); } catch {}
+      syncOutbox();
+    }
+    const merged = overlayDemoOutbox(server);
+    const sig = JSON.stringify(merged);
+    if (sig === lastDemoSig) return;
+    lastDemoSig = sig;
+    demos = merged;
+    saveDemos();
+    renderDemos();
+  } finally { isPullingDemos = false; }
+}
+function refreshDemos() {
+  if (!navigator.onLine) { showToast('Internet nahi hai', 'error'); return; }
+  syncOutbox().then(() => pullDemos());
+}
+
+loadDemos();
+renderDemos();
+
+// ============================================================
+//  SETTINGS + LOGIN (fixed password)
+// ============================================================
+const AUTH_KEY = 'ominibase_auth_v1';
+const FIXED_PW = '803214';
 
 function showLoginUI() {
-  const has = !!getPw();
-  document.getElementById('loginTitle').textContent = has ? 'Login' : 'Password Set Karein';
-  document.getElementById('loginSub').textContent = has ? 'Ominibase CRM' : 'Pehli baar — apna password banayein';
-  document.getElementById('loginPw2').style.display = has ? 'none' : 'block';
-  document.getElementById('loginBtn').textContent = has ? 'Login' : 'Password Save Karein';
+  document.getElementById('loginTitle').textContent = 'Login';
+  document.getElementById('loginSub').textContent = 'Ominibase CRM';
+  document.getElementById('loginBtn').textContent = 'Login';
   document.getElementById('loginErr').textContent = '';
   document.getElementById('loginPw').value = '';
-  document.getElementById('loginPw2').value = '';
 }
 function doLogin() {
   const p = document.getElementById('loginPw').value;
   const err = document.getElementById('loginErr');
-  if (!getPw()) {
-    if (p.length < 4) { err.textContent = 'Kam se kam 4 character ka password rakhein'; return; }
-    if (p !== document.getElementById('loginPw2').value) { err.textContent = 'Dono password match nahi hue'; return; }
-    try { localStorage.setItem(PW_KEY, p); } catch {}
-  } else if (p !== getPw()) {
-    err.textContent = 'Galat password'; return;
-  }
+  if (p !== FIXED_PW) { err.textContent = 'Galat password'; return; }
   try { localStorage.setItem(AUTH_KEY, '1'); } catch {}
   document.documentElement.classList.remove('locked');
-  document.getElementById('loginPw').value = ''; document.getElementById('loginPw2').value = '';
+  document.getElementById('loginPw').value = '';
 }
 function logout() {
   try { localStorage.removeItem(AUTH_KEY); } catch {}
   showLoginUI();
   document.documentElement.classList.add('locked');
 }
-['loginPw', 'loginPw2'].forEach(id => document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); }));
+document.getElementById('loginPw').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
 showLoginUI();
 
 function renderSettings() {
@@ -2300,7 +2553,6 @@ function renderSettings() {
   document.getElementById('set_services').innerHTML = Object.keys(DEFAULT_TPL.services).map(cat =>
     `<div style="margin-bottom:6px"><div style="font-size:11px;color:var(--muted);margin:6px 0 3px">${esc(cat)}</div><input type="text" data-cat="${esc(cat)}" value="${esc(t.services[cat])}"></div>`
   ).join('');
-  document.getElementById('set_curPw').value = getPw();
   updateSyncPanel();
 }
 function saveTemplates() {
@@ -2320,21 +2572,6 @@ function resetTemplates() {
   try { localStorage.removeItem(TPL_KEY); } catch {}
   renderSettings();
   showToast('Default messages wapas aa gaye');
-}
-function changePassword() {
-  const inp = document.getElementById('set_newPw');
-  const n = inp.value;
-  if (n.length < 4) { showToast('Kam se kam 4 character ka password rakhein', 'error'); return; }
-  try { localStorage.setItem(PW_KEY, n); } catch {}
-  inp.value = '';
-  document.getElementById('set_curPw').value = n;
-  showToast('Password badal gaya');
-}
-function togglePwView() {
-  const i = document.getElementById('set_curPw');
-  const show = i.type === 'password';
-  i.type = show ? 'text' : 'password';
-  document.getElementById('pwEyeBtn').innerHTML = `<svg class="ic"><use href="#i-${show ? 'eye-off' : 'eye'}"/></svg>`;
 }
 
 // Init — pehle saved data turant dikhao, phir live data laao
